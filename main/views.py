@@ -11,9 +11,9 @@ def show_main(request):
     mood_entries = MoodEntry.objects.all()
 
     context = {
-        'name': 'Pak Bepe',
-        'class': 'PBP D',
-        'npm': '2306123456',
+        'name': 'Aditya Dharma',
+        'class': 'PBP B',
+        'npm': '2306240074',
         'mood_entries': mood_entries
     }
 
