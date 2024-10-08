@@ -198,32 +198,14 @@ refreshMoodEntries();
 
     document.getElementById("moodEntryForm").reset(); 
     document.querySelector("[data-modal-toggle='crudModal']").click();
-    document.getElementById("submitMoodEntry").onclick = addMoodEntry
 
     return false;
   }
-</script>
-<script>
-  async function addMoodEntry() {
-    const response = await fetch("{% url 'main:add_mood_entry_ajax' %}", {
-      method: "POST",
-      body: new FormData(document.querySelector('#moodEntryForm')),
-    });
 
-    if (response.ok) {
-      await refreshMoodEntries(); // Memperbarui daftar entri mood setelah berhasil ditambahkan
-      document.getElementById("moodEntryForm").reset(); // Mereset form
-      hideModal(); // Menutup modal
-    } else {
-      console.error('Error saving mood entry');
-    }
-  }
-
-  // Menambahkan event listener untuk tombol "Save"
-  document.getElementById("submitMoodEntry").addEventListener("click", function(event) {
-    event.preventDefault(); // Mencegah pengiriman form default
-    addMoodEntry(); // Memanggil fungsi untuk menambahkan mood entry
-  });
+  document.getElementById("moodEntryForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    addMoodEntry();
+  })
 </script>
 
 
