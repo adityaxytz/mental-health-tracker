@@ -21,5 +21,6 @@ urlpatterns = [
     path('logout/', logout_user, name='logout'),
     path('edit-mood/<uuid:id>', edit_mood, name='edit_mood'),
     path('delete/<uuid:id>', delete_mood, name='delete_mood'),
-    path('create-mood-entry-ajax', add_mood_entry_ajax, name='add_mood_entry_ajax')
+    path('create-mood-entry-ajax', add_mood_entry_ajax, name='add_mood_entry_ajax'),
+    path('create-flutter/', create_mood_flutter, name='create_mood_flutter'),
 ]
